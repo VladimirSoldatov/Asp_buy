@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MVC_Begin.Models.Phone>
+
+    @{
+          ViewData["Title"] = "Список телефонов";
+    }
+
+    <div class="text-center">
+        <h1 class="display-4">@ViewData["Title"]</h1>
+       <table class="table">
+           <thead>
+               <tr>
+                   <td>Компания</td>
+                   <td>Модель</td>
+                   <td>Цена</td>
+                   <td></td>
+               </tr>
+           </thead>
+           <tbody>
+               @foreach(var phone in Model)
+            {
+               <tr>
+                   <td>@phone.Company</td>
+                   <td>@phone.Model</td>
+                   <td>@phone.Price</td>
+                   <td><a href ="/Home/Buy/@phone.Id">Купить</a></td>
+               </tr>
+            }
+           </tbody>
+       </table>
+    </div>

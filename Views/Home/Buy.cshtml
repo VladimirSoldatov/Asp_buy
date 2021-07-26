@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Покупка телефон. Оформление заказа";
+
+}
+<h2>
+    @ViewData["Title"]
+</h2>
+<form method="post">
+    <input type="hidden" value="@ViewBag.PhoneId" name="PhoneId" />
+    <table class="table">
+        <tr>
+            <td>
+                Имя
+            </td>
+            <td>
+                <select name="UserId">
+    
+                    @foreach (var user in ViewBag.Users)
+                    {
+                        <option value="@user.Id">
+                            @user.Name
+                        </option>
+
+                    }
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Телефон
+            </td>
+            <td>
+                <input type="text" name="UserPhone">
+            </td>
+        </tr>
+        <tr>
+
+            <td>
+                <input type="submit" value="Отправить">
+            </td>
+        </tr>
+    </table>
+
+</form>
